@@ -6,15 +6,15 @@ export class InMemoryDataService implements InMemoryDbService {
 
     createDb() {
         const heroes = [
-            {id: 11, name: 'Shiva'},
-            {id: 12, name: 'Karma'},
-            {id: 13, name: 'Captain Vyom'},
-            {id: 14, name: 'Venkateshwara'},
+            {id: 11, name: 'Rudra'},
+            {id: 12, name: 'Durga'},
+            {id: 13, name: 'Chandra'},
+            {id: 14, name: 'Varuna'},
             {id: 15, name: 'Krishna'},
-            {id: 16, name: 'Shaktimaan'},
+            {id: 16, name: 'Pushan'},
             {id: 17, name: 'Mitra'},
             {id: 18, name: 'Lakshmi'},
-            {id: 19, name: 'Vindhya'},
+            {id: 19, name: 'Budha'},
             {id: 20, name: 'Shani'},
             {id: 21, name: 'Ganesha'}
         ];
