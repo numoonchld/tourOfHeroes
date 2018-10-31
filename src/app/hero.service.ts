@@ -6,6 +6,11 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({   // Flags class in this component to be a participant of Dependency Injection (DI) system
   providedIn: 'root' // Decides scope of service availabity, root provides serives for components throughout the app
 })
@@ -21,7 +26,7 @@ export class HeroService {  // This class is the Provider of service called "Her
  * @param result - optional value to return as the observable result
  */
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
@@ -33,6 +38,13 @@ export class HeroService {  // This class is the Provider of service called "Her
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
   }
 
   getHeroes(): Observable<Hero[]> {
