@@ -1,10 +1,8 @@
 /* HeroesComponent's private CSS styles */
 
 .heroes {
-    margin: 0 0 20px 0;
     list-style-type: none;
-    padding: 5% 0%;
-    width: 200px;
+    width: 250px;
 }
 
 .heroes li {
@@ -13,7 +11,7 @@
     left: 0px;
     background-color: #EEE;
     margin: 5% 2%;
-    padding: 5% 0px;
+    padding: 0% 0px;
     border-radius: 4px;
     font-size: 12pt;
 }
@@ -28,8 +26,8 @@
     color: #888;
     text-decoration: none;
     position: relative;
-    display: block;
-    width: 250px;
+    display: inline-block;
+    width: 207px; 
 }
 
 .heroes a:hover {
@@ -44,6 +42,17 @@
     height: 200%;
     border-radius: 4px 0 0 4px;
 }
+
+.delete {
+    background-color: gray !important;
+
+    font-size: 12pt;
+    color: white;
+    padding: 10px 10px;
+
+    height: 200%;
+    border-radius: 0px 4px 4px 0;
+  }
 
 /* HeroesComponent's private CSS styles
 
